@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV de Santiago Giuggia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Chosen Palette: Calm Harmony (Warm neutrals with soft teal accents) -->
+    <!-- Application Structure Plan: La aplicación está diseñada como una SPA con un flujo vertical de secciones claras (Inicio, Experiencia, Proyectos Destacados, Habilidades, Educación, Idiomas, Contacto) accesibles a través de una barra de navegación fija. Esta estructura lineal y el anclaje a secciones permite una exploración intuitiva de la información del CV. Fue elegida para replicar la estructura lógica de un CV tradicional, pero con la ventaja de la navegación interactiva y la adición de una sección de proyectos para destacar logros concretos. -->
+    <!-- Visualization & Content Choices: 
+        - Report Info: Datos de contacto, resumen, nombre, foto de perfil. -> Goal: Presentación inicial y atracción. -> Viz/Presentation Method: Sección de héroe con foto circular, texto principal optimizado para empleadores y botón de descarga de CV. -> Interaction: Clic en el botón para descargar. -> Justificación: Captura la atención y da una visión general poderosa, ofreciendo una acción inmediata al reclutador y una conexión personal. -> Library/Method: HTML y Tailwind CSS.
+        - Report Info: Experiencia laboral. -> Goal: Detallar trayectoria con logros cuantificables. -> Viz/Presentation Method: Tarjetas de experiencia con detalles de fechas, puesto y empresa, y bullet points enfocados en acciones y resultados. -> Interaction: Hover para sutil realce. -> Justificación: Facilita la lectura de cada puesto de forma independiente y destaca el impacto del trabajo, con feedback visual de interacción. -> Library/Method: HTML y Tailwind CSS.
+        - Report Info: Creación de WISP-ISP, IoT, SecuraTech Solutions y Portero Web. -> Goal: Mostrar iniciativa y proyectos concretos en diversas áreas, incluyendo desarrollo web. -> Viz/Presentation Method: Sección de "Proyectos Destacados" con descripciones detalladas y enlaces a los proyectos. -> Interaction: Hover para sutil realce y clic en enlaces para ver proyectos. -> Justificación: Aporta pruebas tangibles de experiencia y capacidad de ejecución más allá de roles formales, con feedback visual. -> Library/Method: HTML y Tailwind CSS.
+        - Report Info: Habilidades (actualizadas con Frontend, Backend, IA). -> Goal: Mostrar competencias y nivel de dominio en áreas tecnológicas clave. -> Viz/Presentation Method: Etiquetas (badges) para cada habilidad con un indicador de nivel de texto simple (ej. "Avanzado", "Intermedio", "Básico"). -> Interaction: Ninguna específica, visualización de la lista. -> Justificación: Presentación concisa y visualmente atractiva de las habilidades técnicas con un contexto de dominio, incluyendo nuevas áreas relevantes para el mercado laboral actual, con diseño refinado. -> Library/Method: HTML y Tailwind CSS.
+        - Report Info: Educación y certificaciones (actualizadas con MTCNA). -> Goal: Acreditar formación y certificaciones específicas. -> Viz/Presentation Method: Lista clara de títulos y certificaciones. -> Interaction: Hover para sutil realce. -> Justificación: Facilita la rápida identificación de la formación académica y validaciones profesionales, con feedback visual. -> Library/Method: HTML y Tailwind CSS.
+        - Report Info: Idiomas. -> Goal: Mostrar competencias lingüísticas. -> Viz/Presentation Method: Lista simple. -> Interaction: Ninguna. -> Justificación: Claridad en la presentación de los idiomas. -> Library/Method: HTML y Tailwind CSS.
+        - Report Info: Contacto (emails actualizados y WhatsApp link). -> Goal: Facilitar la comunicación directa y moderna. -> Viz/Presentation Method: Íconos y enlaces directos para email principal y WhatsApp. -> Interaction: Clic en enlaces para contactar. -> Justificación: Mejora la accesibilidad y moderniza las opciones de contacto. -> Library/Method: HTML y Tailwind CSS.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fdfcf9; /* Warm neutral background */
+            color: #4b5563; /* stone-700 equivalent */
+        }
+        .brand-primary {
+            color: #0d9488; /* Teal-600 */
+        }
+        .brand-bg-primary {
+            background-color: #0d9488;
+        }
+        .brand-bg-soft {
+            background-color: #f0fdfa; /* Teal-50 */
+        }
+        .brand-border-soft {
+            border-color: #e2e8f0; /* slate-200 */
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 2.5rem; /* mb-10 */
+            font-size: 2.25rem; /* text-4xl */
+            font-weight: 700; /* font-bold */
+            color: #1f2937; /* stone-800 */
+        }
+        .skill-level-pill {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            margin-left: 0.5rem;
+            border-radius: 9999px; /* full rounded */
+            font-size: 0.75rem; /* text-xs */
+            font-weight: 600; /* font-semibold */
+            background-color: #bfecdb; /* A softer green for pill background */
+            color: #059669; /* A darker green for pill text */
+        }
+        /* Custom gradient for Hero Section */
+        .hero-gradient {
+            background: linear-gradient(to bottom, #f0fdfa, #fdfcf9); /* Soft gradient from teal-50 to neutral background */
+        }
+        /* Hover effects for cards */
+        .card-hover-effect {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .card-hover-effect:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Larger shadow on hover */
+        }
+    </style>
+</head>
+<body class="leading-relaxed">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white shadow-md py-4">
+        <div class="container mx-auto px-4 flex justify-center space-x-4 sm:space-x-8">
+            <a href="#inicio" class="text-sm sm:text-base font-semibold text-stone-600 hover:brand-primary hover:text-teal-700 transition-colors">Inicio</a>
+            <a href="#experiencia" class="text-sm sm:text-base font-semibold text-stone-600 hover:brand-primary hover:text-teal-700 transition-colors">Experiencia</a>
+            <a href="#proyectos" class="text-sm sm:text-base font-semibold text-stone-600 hover:brand-primary hover:text-teal-700 transition-colors">Proyectos</a>
+            <a href="#habilidades" class="text-sm sm:text-base font-semibold text-stone-600 hover:brand-primary hover:text-teal-700 transition-colors">Habilidades</a>
+            <a href="#educacion" class="text-sm sm:text-base font-semibold text-stone-600 hover:brand-primary hover:text-teal-700 transition-colors">Educación</a>
+            <a href="#contacto" class="text-sm sm:text-base font-semibold text-stone-600 hover:brand-primary hover:text-teal-700 transition-colors">Contacto</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="pt-24 pb-16 sm:py-32 hero-gradient text-center px-4">
+        <div class="container mx-auto max-w-4xl">
+            <h1 class="text-4xl sm:text-6xl font-extrabold text-stone-800 leading-tight">
+                Santiago Giuggia
+            </h1>
+            <p class="mt-4 text-xl sm:text-2xl font-medium brand-primary">
+                Técnico en Telecomunicaciones y Desarrollador Certificado
+            </p>
+            <!-- Photo placeholder -->
+            <div class="mt-8 mb-8 flex justify-center">
+                <img src="assets/IMG_20210328_202346538.jpg" alt="Foto de Santiago Giuggia" class="w-32 h-32 rounded-full object-cover shadow-lg border-4 border-white">
+            </div>
+            <p class="mt-8 text-lg text-stone-700 leading-relaxed max-w-2xl mx-auto">
+                Profesional con una sólida trayectoria en **telecomunicaciones** y una pasión demostrada por la **innovación y el aprendizaje continuo**. Con un perfil versátil que combina experiencia técnica práctica en **redes (Mikrotik, Firewalls, Linux)**, **desarrollo (PHP, MySQL, IoT, Frontend/Backend)** y un interés emergente en **Inteligencia Artificial**, estoy siempre dispuesto a enfrentar desafíos y aportar soluciones efectivas. Mi **capacidad de adaptación** y mi **enfoque en la generación de valor** me permiten integrarme rápidamente y contribuir activamente al éxito de proyectos dinámicos.
+            </p>
+            <div class="mt-10">
+                <a href="URL_DE_TU_CV.pdf" download class="inline-block brand-bg-primary text-white font-bold py-3 px-8 rounded-lg shadow-xl hover:bg-teal-700 transition-all text-lg">
+                    Descargar CV (PDF)
+                </a>
+                <p class="text-sm text-stone-500 mt-2">
+                    (Por favor, reemplaza "URL_DE_TU_CV.pdf" con el enlace real a tu CV en PDF)
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experiencia" class="py-16 sm:py-24 px-4">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="section-header">Experiencia Laboral</h2>
+            <div class="bg-white p-6 sm:p-8 rounded-xl shadow-xl brand-border-soft border-2 card-hover-effect">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4">
+                    <h3 class="text-2xl font-semibold text-stone-800">Técnico en Telecomunicaciones</h3>
+                    <span class="text-stone-500 text-base sm:text-lg font-medium mt-2 sm:mt-0">Dic 2009 - Nov 2017</span>
+                </div>
+                <p class="text-lg font-medium brand-primary mb-4">Newi - Charset AR</p>
+                <ul class="list-disc list-inside space-y-2 text-stone-700 text-base sm:text-lg">
+                    <li>**Gestioné y mantuve** infraestructuras de telecomunicaciones, asegurando la operatividad y rendimiento de redes (ej., **incrementando la eficiencia en un X%**).</li>
+                    <li>**Implementé y configuré** soluciones basadas en Mikrotik Software, optimizando la conectividad y seguridad de la red.</li>
+                    <li>**Desarrollé y di soporte** a sistemas de programación PHP y administré bases de datos MySQL y Phpmyadmin para garantizar la integridad y accesibilidad de la información.</li>
+                    <li>**Administré** sistemas operativos Linux y entornos de servidores Microsoft (Windows 10, Server 2016), **asegurando la estabilidad y el soporte** a usuarios y aplicaciones críticas.</li>
+                    <li>**Participé activamente** en el diseño y desarrollo de aplicaciones para Internet of Things (IoT), **contribuyendo a la innovación** y expansión de servicios.</li>
+                    <li>**Apliqué conocimientos** en la industria náutica, adaptando soluciones de telecomunicaciones a entornos específicos y desafiantes.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="proyectos" class="py-16 sm:py-24 brand-bg-soft px-4">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="section-header">Proyectos Destacados</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-md brand-border-soft border card-hover-effect">
+                    <h3 class="text-xl font-semibold text-stone-800 mb-2">Creación y Operación de WISP-ISP (x2)</h3>
+                    <p class="text-stone-700 text-base mb-4">
+                        Diseñé, implementé y operé dos proveedores de servicios de internet inalámbricos (WISP-ISP) completos en la Ciudad de Córdoba Capital, Argentina.
+                    </p>
+                    <ul class="list-disc list-inside text-sm text-stone-600 space-y-1">
+                        <li>**Lideré** el diseño e implementación de la infraestructura de red, seleccionando y configurando equipos clave.</li>
+                        <li>**Administré** la configuración y mantenimiento de hardware Mikrotik para asegurar el rendimiento óptimo de la red.</li>
+                        <li>**Proporcioné** soporte técnico integral a clientes, **resolviendo incidencias y garantizando la satisfacción del usuario**.</li>
+                        <li>**Desarrollé y mantuve** sistemas para la administración de bases de datos de usuarios y servicios, **mejorando la eficiencia operativa**.</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md brand-border-soft border card-hover-effect">
+                    <h3 class="text-xl font-semibold text-stone-800 mb-2">Desarrollo de Aplicaciones IoT</h3>
+                    <p class="text-stone-700 text-base mb-4">
+                        Participación activa en el desarrollo e implementación de soluciones de Internet de las Cosas (IoT).
+                    </p>
+                    <ul class="list-disc list-inside text-sm text-stone-600 space-y-1">
+                        <li>**Integré** diversos dispositivos y sensores para soluciones IoT, **estableciendo comunicación fluida y eficiente**.</li>
+                        <li>**Programé** la lógica de comunicación entre dispositivos, **facilitando la automatización y el control remoto**.</li>
+                        <li>**Gestioné** la recolección y análisis de datos generados por dispositivos IoT, **extrrayendo insights valiosos para la toma de decisiones**.</li>
+                        <li>**Desarrollé** interfaces de usuario básicas para el control y monitoreo de sistemas IoT, **mejorando la usabilidad**.</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md brand-border-soft border card-hover-effect">
+                    <h3 class="text-xl font-semibold text-stone-800 mb-2">SecuraTech Solutions</h3>
+                    <p class="text-stone-700 text-base mb-4">
+                        Desarrollo y diseño de un sitio web para una empresa de soluciones de seguridad tecnológica.
+                    </p>
+                    <ul class="list-disc list-inside text-sm text-stone-600 space-y-1">
+                        <li>**Diseñé y construí** la interfaz de usuario con enfoque en la experiencia de usuario (UX).</li>
+                        <li>**Implementé** la lógica frontend para la interactividad del sitio.</li>
+                        <li>**Optimicé** la presentación de servicios y soluciones de seguridad.</li>
+                    </ul>
+                    <a href="https://santiagogiuggia.github.io/securatech-website/#inicio" target="_blank" class="inline-block mt-4 brand-bg-primary text-white font-bold py-2 px-4 rounded-lg shadow-md hover:bg-teal-700 transition-colors text-sm">
+                        Ver Proyecto →
+                    </a>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md brand-border-soft border card-hover-effect">
+                    <h3 class="text-xl font-semibold text-stone-800 mb-2">Portero Web</h3>
+                    <p class="text-stone-700 text-base mb-4">
+                        Desarrollé y puse en marcha una aplicación web y una aplicación residente para su comunicación, abarcando tanto el desarrollo frontend como el backend. Este sistema actúa como un portero inteligente, facilitando la interacción remota.
+                    </p>
+                    <ul class="list-disc list-inside text-sm text-stone-600 space-y-1">
+                        <li>**Tecnologías clave:** HTML y JavaScript para el frontend. Para el backend, utilicé **Python (con Flask/Django), Node.js (con Express) y PHP**, demostrando versatilidad en diferentes entornos de desarrollo.</li>
+                        <li>**Rol:** Creación y puesta en marcha completa de la aplicación web y la aplicación residente para su comunicación.</li>
+                        <li>**Beneficios Clave:**
+                            <ul class="list-disc list-inside ml-4 mt-1">
+                                <li>**Mejoró la comunicación** y la gestión de accesos a edificios.</li>
+                                <li>**Incrementó la seguridad** en los accesos al ofrecer control remoto y monitoreo.</li>
+                                <li>**Redujo significativamente los costos** al eliminar la necesidad de hardware específico y costoso en cada edificio.</li>
+                                <li>**Modernizó** sistemas de portería obsoletos con tecnología accesible y eficiente.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="habilidades" class="py-16 sm:py-24 px-4">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="section-header">Habilidades</h2>
+            <div class="flex flex-wrap justify-center gap-3 sm:gap-4">
+                <span class="bg-white text-brand-primary font-medium px-4 py-2 rounded-full shadow-sm brand-border-soft border">Telecomunicaciones <span class="skill-level-pill">Avanzado</span></span>
+                <span class="bg-white text-brand-primary font-medium px-4 py-2 rounded-full shadow-sm brand-border-soft border">Mikrotik Software <span class="skill-level-pill">Avanzado</span></span>
+                <span class="bg-white text-brand-primary font-medium px-4 py-2 rounded-full shadow-sm brand-border-soft border">Firewalls <span class="skill-level-pill">Intermedio</span></span>
+                <span class="bg-white text-brand-primary font-medium px-4 py-2 rounded-full shadow-sm brand-border-soft border">MySQL <span class="skill-level-pill">Intermedio</span></span>
+                <span class="bg-white text-brand-primary font-medium px-4 py-2 rounded-full shadow-sm brand-border-soft border">Programación PHP <span class="skill-level-pill">Intermedio</span></span>
+                <span class="bg-white text-brand-primary font-medium px-4 py-2 rounded-full shadow-sm brand-border-soft border">Phpmyadmin <span class="skill-level-pill">Intermedio</span></span>
+                <span class="bg-white text-brand-primary font-medium px-4 py-2 rounded-full shadow-sm brand-border-soft border">Sistema Operativo Linux <span class="skill-level-pill">Avanzado</span></span>
+                <span class="bg-white text-brand-primary font-medium px-4 py-2 rounded-full shadow-sm brand-border-soft border">Microsoft Windows 10 <span class="skill-level-pill">Avanzado</span></span>
+                <span class="bg-white text-brand-primary font-medium px-4 py-2 rounded-full shadow-sm brand-border-soft border">Microsoft Server 2016 <span class="skill-level-pill">Intermedio</span></span>
+                <span class="bg-white text-brand-primary font-medium px-4 py-2 rounded-full shadow-sm brand-border-soft border">Desarrollo IoT <span class="skill-level-pill">Básico</span></span>
+                <span class="bg-white text-brand-primary font-medium px-4 py-2 rounded-full shadow-sm brand-border-soft border">Industria Náutica <span class="skill-level-pill">Intermedio</span></span>
+                <span class="bg-white text-brand-primary font-medium px-4 py-2 rounded-full shadow-sm brand-border-soft border">Desarrollo Frontend <span class="skill-level-pill">Básico</span></span>
+                <span class="bg-white text-brand-primary font-medium px-4 py-2 rounded-full shadow-sm brand-border-soft border">Desarrollo Backend <span class="skill-level-pill">Básico</span></span>
+                <span class="bg-white text-brand-primary font-medium px-4 py-2 rounded-full shadow-sm brand-border-soft border">Manejo de IA <span class="skill-level-pill">Básico</span></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Certifications Section -->
+    <section id="educacion" class="py-16 sm:py-24 brand-bg-soft px-4">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="section-header">Educación y Certificaciones</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-md brand-border-soft border card-hover-effect">
+                    <h3 class="text-xl font-semibold text-stone-800">Diploma de Ingeniería en Telecomunicaciones</h3>
+                    <p class="brand-primary font-medium mt-1">UBP de Argentina</p>
+                    <p class="text-stone-500 text-sm mt-1">Graduado</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md brand-border-soft border card-hover-effect">
+                    <h3 class="text-xl font-semibold text-stone-800">Certified Tech Developer</h3>
+                    <p class="brand-primary font-medium mt-1">Digital House</p>
+                    <p class="text-stone-500 text-sm mt-1">Emitido en Jun 2021 - Actual</p>
+                </div>
+                 <div class="bg-white p-6 rounded-xl shadow-md brand-border-soft border card-hover-effect">
+                    <h3 class="text-xl font-semibold text-stone-800">MTCNA (MikroTik Certified Network Associate)</h3>
+                    <p class="brand-primary font-medium mt-1">MikroTik</p>
+                    <p class="text-stone-500 text-sm mt-1">Certificación realizada</p>
+                </div>
+            </div>
+            <div class="mt-8 text-center text-stone-600">
+                <p>Mi educación secundaria fue como Técnico y en Administración Contable.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Languages Section -->
+    <section id="idiomas" class="py-16 sm:py-24 px-4">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="section-header">Idiomas</h2>
+            <div class="flex flex-wrap justify-center gap-6 text-xl font-medium text-stone-700">
+                <span>Español: <span class="brand-primary font-semibold">Nativo</span></span>
+                <span>Inglés: <span class="brand-primary font-semibold">Básico</span></span>
+                <span>Italiano: <span class="brand-primary font-semibold">Básico</span></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="py-16 sm:py-24 brand-bg-soft px-4">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h2 class="section-header">Contacto</h2>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-10">
+                <a href="mailto:santiagogiuggia@outlook.es" class="flex items-center gap-2 text-xl font-medium text-stone-700 hover:brand-primary hover:text-teal-700 transition-colors">
+                    📧 santiagogiuggia@outlook.es
+                </a>
+                <a href="mailto:santiagogiuggia@gmail.com" class="flex items-center gap-2 text-xl font-medium text-stone-700 hover:brand-primary hover:text-teal-700 transition-colors">
+                    📧 santiagogiuggia@gmail.com
+                </a>
+                <a href="https://wa.me/543517659654?text=Hola%20Santiago,%20me%20interesa%20tu%20CV." target="_blank" class="flex items-center gap-2 text-xl font-medium text-stone-700 hover:brand-primary hover:text-teal-700 transition-colors">
+                    💬 +54 351 7659654 (WhatsApp)
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center py-8 border-t border-stone-200 mt-16">
+        <p class="text-stone-500">CV interactivo de Santiago Giuggia</p>
+    </footer>
+
+    <script>
+        // JavaScript for smooth scrolling
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const offsetTop = targetElement.offsetTop - document.querySelector('nav').offsetHeight;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
