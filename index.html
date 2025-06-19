@@ -3,22 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV de Santiago Giuggia</title>
+    <title>CV de Santiago Giuggia - Técnico en Telecomunicaciones & Desarrollador</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="CV de Santiago Giuggia: Técnico en Telecomunicaciones y Desarrollador Full Stack. Experto en redes MikroTik, Linux, IoT, PHP, Python, Node.js y soluciones innovadoras de software y hardware.">
+    <meta name="keywords" content="Santiago Giuggia, CV, Currículum, Telecomunicaciones, Desarrollo Full Stack, Frontend, Backend, MikroTik, Linux, IoT, PHP, Python, Node.js, Inteligencia Artificial, Empleo Argentina, Técnico, Desarrollador">
+    <meta name="author" content="Santiago Giuggia">
+    <meta name="robots" content="index, follow"> <!-- Indica a los motores de búsqueda que indexen y sigan los enlaces -->
+
+    <!-- Open Graph Meta Tags (para compartir en redes sociales como LinkedIn, Facebook) -->
+    <meta property="og:title" content="CV de Santiago Giuggia - Técnico en Telecomunicaciones & Desarrollador">
+    <meta property="og:description" content="Perfil profesional de Santiago Giuggia: Especialista en redes, sistemas y desarrollo web/IoT, buscando nuevas oportunidades.">
+    <meta property="og:image" content="assets/IMG_20210328_202346538.jpg"> <!-- Usa la URL completa de tu imagen si tu sitio está en un subdirectorio, o ruta relativa -->
+    <meta property="og:url" content="[TU_URL_DEL_CV_PUBLICADO]"> <!-- IMPORTANTE: Reemplaza con la URL real de tu CV web cuando lo publiques -->
+    <meta property="og:type" content="profile">
+    <meta property="profile:first_name" content="Santiago">
+    <meta property="profile:last_name" content="Giuggia">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Chosen Palette: Calm Harmony (Warm neutrals with soft teal accents) -->
-    <!-- Application Structure Plan: La aplicación está diseñada como una SPA con un flujo vertical de secciones claras (Inicio, Experiencia, Proyectos Destacados, Habilidades, Educación, Idiomas, Contacto) accesibles a través de una barra de navegación fija. Esta estructura lineal y el anclaje a secciones permite una exploración intuitiva de la información del CV. Fue elegida para replicar la estructura lógica de un CV tradicional, pero con la ventaja de la navegación interactiva y la adición de una sección de proyectos para destacar logros concretos. -->
+    <!-- Application Structure Plan: La aplicación está diseñada como una SPA con un flujo vertical de secciones claras (Inicio, Experiencia, Proyectos Destacados, Habilidades, Testimonios, Educación, Idiomas, Contacto) accesibles a través de una barra de navegación fija. Esta estructura lineal y el anclaje a secciones permite una exploración intuitiva de la información del CV. Fue elegida para replicar la estructura lógica de un CV tradicional, pero con la ventaja de la navegación interactiva y la adición de una sección de proyectos y testimonios para destacar logros y validación externa. Las habilidades se agrupan para mejorar la legibilidad. -->
     <!-- Visualization & Content Choices: 
         - Report Info: Datos de contacto, resumen, nombre, foto de perfil. -> Goal: Presentación inicial y atracción. -> Viz/Presentation Method: Sección de héroe con foto circular, texto principal optimizado para empleadores y botón de descarga de CV. -> Interaction: Clic en el botón para descargar. -> Justificación: Captura la atención y da una visión general poderosa, ofreciendo una acción inmediata al reclutador y una conexión personal. -> Library/Method: HTML y Tailwind CSS.
         - Report Info: Experiencia laboral. -> Goal: Detallar trayectoria con logros cuantificables. -> Viz/Presentation Method: Tarjetas de experiencia con detalles de fechas, puesto y empresa, y bullet points enfocados en acciones y resultados. -> Interaction: Hover para sutil realce. -> Justificación: Facilita la lectura de cada puesto de forma independiente y destaca el impacto del trabajo, con feedback visual de interacción. -> Library/Method: HTML y Tailwind CSS.
-        - Report Info: Creación de WISP-ISP, IoT, SecuraTech Solutions y Portero Web. -> Goal: Mostrar iniciativa y proyectos concretos en diversas áreas, incluyendo desarrollo web. -> Viz/Presentation Method: Sección de "Proyectos Destacados" con descripciones detalladas y enlaces a los proyectos. -> Interaction: Hover para sutil realce y clic en enlaces para ver proyectos. -> Justificación: Aporta pruebas tangibles de experiencia y capacidad de ejecución más allá de roles formales, con feedback visual. -> Library/Method: HTML y Tailwind CSS.
-        - Report Info: Habilidades (actualizadas con Frontend, Backend, IA). -> Goal: Mostrar competencias y nivel de dominio en áreas tecnológicas clave. -> Viz/Presentation Method: Etiquetas (badges) para cada habilidad con un indicador de nivel de texto simple (ej. "Avanzado", "Intermedio", "Básico"). -> Interaction: Ninguna específica, visualización de la lista. -> Justificación: Presentación concisa y visualmente atractiva de las habilidades técnicas con un contexto de dominio, incluyendo nuevas áreas relevantes para el mercado laboral actual, con diseño refinado. -> Library/Method: HTML y Tailwind CSS.
-        - Report Info: Educación y certificaciones (actualizadas con MTCNA). -> Goal: Acreditar formación y certificaciones específicas. -> Viz/Presentation Method: Lista clara de títulos y certificaciones. -> Interaction: Hover para sutil realce. -> Justificación: Facilita la rápida identificación de la formación académica y validaciones profesionales, con feedback visual. -> Library/Method: HTML y Tailwind CSS.
-        - Report Info: Idiomas. -> Goal: Mostrar competencias lingüísticas. -> Viz/Presentation Method: Lista simple. -> Interaction: Ninguna. -> Justificación: Claridad en la presentación de los idiomas. -> Library/Method: HTML y Tailwind CSS.
-        - Report Info: Contacto (emails actualizados y WhatsApp link). -> Goal: Facilitar la comunicación directa y moderna. -> Viz/Presentation Method: Íconos y enlaces directos para email principal y WhatsApp. -> Interaction: Clic en enlaces para contactar. -> Justificación: Mejora la accesibilidad y moderniza las opciones de contacto. -> Library/Method: HTML y Tailwind CSS.
+        - Report Info: Creación de WISP-ISP, IoT, SecuraTech Solutions y Portero Web. -> Goal: Mostrar iniciativa y proyectos concretos en diversas áreas, incluyendo desarrollo web. -> Viz/Presentation Method: Sección de "Proyectos Destacados" con descripciones detalladas y enlaces a los proyectos. -> Interaction: Hover para sutil realce y clic en enlaces para ver proyectos. -> Justification: Aporta pruebas tangibles de experiencia y capacidad de ejecución más allá de roles formales, con feedback visual. -> Library/Method: HTML y Tailwind CSS.
+        - Report Info: Habilidades (agrupadas y con niveles, con Frontend, Backend, IA a nivel intermedio). -> Goal: Mostrar competencias y nivel de dominio en áreas tecnológicas clave de forma organizada y con un nivel de expertise mejorado. -> Viz/Presentation Method: Etiquetas (badges) para cada habilidad con un indicador de nivel de texto simple (ej. "Avanzado", "Intermedio", "Básico"). -> Interaction: Ninguna específica, visualización de la lista organizada. -> Justificación: Mejora drásticamente la legibilidad y permite al reclutador identificar rápidamente conjuntos de habilidades relevantes, con diseño refinado y niveles ajustados. -> Library/Method: HTML y Tailwind CSS.
+        - Report Info: Testimonios/Recomendaciones. -> Goal: Generar confianza y validación externa. -> Viz/Presentation Method: Sección de citas con nombre y cargo del recomendador. -> Interaction: Scroll vertical para explorar múltiples testimonios. -> Justification: Añade credibilidad directa al perfil. -> Library/Method: HTML y Tailwind CSS.
+        - Report Info: Educación y certificaciones (actualizadas con MTCNA). -> Goal: Acreditar formación y certificaciones específicas. -> Viz/Presentation Method: Lista clara de títulos y certificaciones. -> Interaction: Hover para sutil realce. -> Justification: Facilita la rápida identificación de la formación académica y validaciones profesionales, con feedback visual. -> Library/Method: HTML y Tailwind CSS.
+        - Report Info: Idiomas. -> Goal: Mostrar competencias lingüísticas. -> Viz/Presentation Method: Lista simple. -> Interaction: Ninguna. -> Justification: Claridad en la presentación de los idiomas. -> Library/Method: HTML y Tailwind CSS.
+        - Report Info: Contacto (emails actualizados y WhatsApp link). -> Goal: Facilitar la comunicación directa y moderna. -> Viz/Presentation Method: Íconos y enlaces directos para email principal y WhatsApp. -> Interaction: Clic en enlaces para contactar. -> Justification: Mejora la accesibilidad y moderniza las opciones de contacto. -> Library/Method: HTML y Tailwind CSS.
     -->
     <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
 
@@ -68,6 +84,18 @@
         .card-hover-effect:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Larger shadow on hover */
+        }
+        .testimonial-card {
+            @apply bg-white p-6 rounded-xl shadow-md border brand-border-soft flex flex-col items-center text-center;
+        }
+        .testimonial-quote {
+            @apply text-lg italic text-stone-700 mb-4;
+        }
+        .testimonial-author {
+            @apply font-semibold text-stone-800;
+        }
+        .testimonial-title {
+            @apply text-sm text-stone-500;
         }
     </style>
 </head>
@@ -148,7 +176,7 @@
                     <ul class="list-disc list-inside text-sm text-stone-600 space-y-1">
                         <li>**Lideré** el diseño e implementación de la infraestructura de red, seleccionando y configurando equipos clave.</li>
                         <li>**Administré** la configuración y mantenimiento de hardware Mikrotik para asegurar el rendimiento óptimo de la red.</li>
-                        <li>**Proporcioné** soporte técnico integral a clientes, **resolviendo incidencias y garantizando la satisfacción del usuario**.</li>
+                        <li>**Proporcionó** soporte técnico integral a clientes, **resolviendo incidencias y garantizando la satisfacción del usuario**.</li>
                         <li>**Desarrollé y mantuve** sistemas para la administración de bases de datos de usuarios y servicios, **mejorando la eficiencia operativa**.</li>
                     </ul>
                 </div>
@@ -223,9 +251,9 @@
                         <span class="bg-white text-brand-primary font-medium px-4 py-2 rounded-full shadow-sm brand-border-soft border">MySQL <span class="skill-level-pill">Intermedio</span></span>
                         <span class="bg-white text-brand-primary font-medium px-4 py-2 rounded-full shadow-sm brand-border-soft border">Phpmyadmin <span class="skill-level-pill">Intermedio</span></span>
                         <span class="bg-white text-brand-primary font-medium px-4 py-2 rounded-full shadow-sm brand-border-soft border">Desarrollo IoT <span class="skill-level-pill">Básico</span></span>
-                        <span class="bg-white text-brand-primary font-medium px-4 py-2 rounded-full shadow-sm brand-border-soft border">Desarrollo Frontend <span class="skill-level-pill">Básico</span></span>
-                        <span class="bg-white text-brand-primary font-medium px-4 py-2 rounded-full shadow-sm brand-border-soft border">Desarrollo Backend <span class="skill-level-pill">Básico</span></span>
-                        <span class="bg-white text-brand-primary font-medium px-4 py-2 rounded-full shadow-sm brand-border-soft border">Manejo de IA <span class="skill-level-pill">Básico</span></span>
+                        <span class="bg-white text-brand-primary font-medium px-4 py-2 rounded-full shadow-sm brand-border-soft border">Desarrollo Frontend <span class="skill-level-pill">Intermedio</span></span>
+                        <span class="bg-white text-brand-primary font-medium px-4 py-2 rounded-full shadow-sm brand-border-soft border">Desarrollo Backend <span class="skill-level-pill">Intermedio</span></span>
+                        <span class="bg-white text-brand-primary font-medium px-4 py-2 rounded-full shadow-sm brand-border-soft border">Manejo de IA <span class="skill-level-pill">Intermedio</span></span>
                     </div>
                 </div>
                 <div class="md:col-span-2">
